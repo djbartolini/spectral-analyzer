@@ -4,7 +4,9 @@ import styles from './styles';
 import Controls from '../Controls';
 
 const {
-  SAnalyzer
+  SAnalyzer,
+  SContainer,
+  SCanvas
 } = styles;
 
 const Analyzer = () => {
@@ -17,24 +19,18 @@ const Analyzer = () => {
   const containerRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const audioElementRef = useRef<HTMLAudioElement>(null);
 
-
-  let audioFile: File;
-  const filePath = '/sounds/DRY.mp3';
-
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const fileUpload = event.target.files?.[0];
     setFile(fileUpload);
   }
 
-  // @ts-ignore
-  const getAudioFile = async () => {
-    await fetch(filePath)
-      .then(response => response.blob())
-      .then(blob => {
-        audioFile = new File([blob], 'audio.wav', { type: 'audio/wav' })
-      });
-  }
-
+  // const getAudioFile = async () => {
+  //   await fetch(filePath)
+  //     .then(response => response.blob())
+  //     .then(blob => {
+  //       audioFile = new File([blob], 'audio.wav', { type: 'audio/wav' })
+  //     });
+  // }
 
   const audioFileToBase64 = async (file: File): Promise<string> => {
     const reader = new FileReader();
@@ -89,8 +85,11 @@ const Analyzer = () => {
     const container = containerRef.current;
 
     if (canvas && container) {
-      canvas.width = 800;
-      canvas.height = 400;
+      canvas.width = parseInt(getComputedStyle(container).width);
+      canvas.height = 500;
+
+      console.log(canvas.width);
+
 
       const ctx = canvas.getContext('2d');
 
@@ -119,15 +118,9 @@ const Analyzer = () => {
   return (
     <>
       <SAnalyzer>
-        
-        
-        <div ref={containerRef} style={{width: "400px", height: "400px"}}>
-          <canvas ref={canvasRef}>
-
-          </canvas>
-        </div>
-        
-
+        <SContainer ref={containerRef}>
+          <SCanvas ref={canvasRef} />
+        </SContainer>
       </SAnalyzer>
       <Controls 
         handlePlay={handlePlay}
