@@ -1,5 +1,4 @@
 import Analyzer from "./components/Analyzer";
-import Controls from "./components/Controls";
 import Header from "./components/Header";
 import styles from "./styles";
 
@@ -13,7 +12,6 @@ const App = () => {
     <SBody>
       <Header />
       <Analyzer />
-      <Controls />
     </SBody>
   )
 }
