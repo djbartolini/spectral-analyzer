@@ -7,3 +7,6 @@ This app will allow users to upload audio files or use their computer's input (e
 JavaScript Web APIs feature a powerful Web Audio API that I may use. I am however interested in writing my own Fast Fourier Transform algorithm and I may end up hard-coding the playback and visualization logic for educational purposes.
 
 Currently in early-development, check back soon.
+
+## Demo
+![Demo video](public/images/analyzer-demo.gif)
