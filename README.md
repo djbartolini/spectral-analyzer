@@ -6,10 +6,9 @@ Currently in early-development.
 
 Try it now: [Link to Audio Spectral Analyzer](https://djbartolini.github.io/spectral-analyzer/)
 
-This app will allow users to upload audio files or use their computer's input (e.g. microphone, audio interface) to see real-time frequency data. There will be additional functionality to trace frequency data over time to provide user visual representations of the audio to aid in performing EQ and compression mixing techniques on their audio files.
+Implemented using React and Web APIs.
 
-JavaScript Web APIs feature a powerful Web Audio API that I may use. I am however interested in writing my own Fast Fourier Transform algorithm and I may end up hard-coding the playback and visualization logic for educational purposes.
-
+This app will allow users to upload audio files or use their computer's input (e.g. microphone, audio interface) to see real-time frequency data. I am currently developing additional functionality that will trace frequency data over time to provide user-configurable options for the visual representation of the audio to aid in performing EQ and compression mixing techniques on audio files.
 
 ## Demo
-![Demo video](public/images/analyzer-demo.gif)
+![Demo video](public/images/analyzer-color-demo.gif)
