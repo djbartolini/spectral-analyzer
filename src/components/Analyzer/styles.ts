@@ -6,6 +6,7 @@ const SAnalyzer = styled.div`
   margin: 0 auto;
   border: 1px solid white;
   border-radius: 12px;
+  background-color: #191919;
 `;
 
 const SContainer = styled.div`
@@ -14,7 +15,7 @@ const SContainer = styled.div`
 `;
 
 const SCanvas = styled.canvas`
-
+  height: 500px;
 `;
 
 
